@@ -1,10 +1,11 @@
 default:
-  name: "My Weather App"
-  offset: 1
+  app_name: "12FactorApp"
+  db_port: 6379
 
 development:
-  name: "Developer Mode"
+  db_host: "localhost"
+  log_level: "DEBUG"
 
 production:
-  name: "Admin Mode"
-  offset: 0
+  db_host: "redis.production.svc"
+  log_level: "INFO"
