@@ -1,0 +1,10 @@
+default:
+  name: "My Weather App"
+  offset: 1
+
+development:
+  name: "Developer Mode"
+
+production:
+  name: "Admin Mode"
+  offset: 0
