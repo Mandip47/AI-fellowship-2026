@@ -1,0 +1,156 @@
+2026-05-10 20:52:38,364 - INFO - Database connection configured
+2026-05-10 20:52:53,174 - INFO - Request received: GET /orders/count
+2026-05-10 20:52:53,174 - INFO - Query execution start: Counting rows in orders
+2026-05-10 20:52:53,186 - ERROR - Database error while querying orders: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 20:52:53,186 - INFO - Request successful: GET /orders/count
+2026-05-10 20:52:53,187 - INFO - Database connection closed
+2026-05-10 20:53:56,201 - INFO - Request received: GET /orders/count
+2026-05-10 20:53:56,201 - INFO - Query execution start: Counting rows in orders
+2026-05-10 20:53:56,203 - ERROR - Database error while querying orders: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 20:53:56,203 - INFO - Request successful: GET /orders/count
+2026-05-10 20:53:56,204 - INFO - Database connection closed
+2026-05-10 20:54:06,698 - INFO - Request received: GET /orders/count
+2026-05-10 20:54:06,698 - INFO - Query execution start: Counting rows in orders
+2026-05-10 20:54:06,700 - ERROR - Database error while querying orders: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 20:54:06,700 - INFO - Request successful: GET /orders/count
+2026-05-10 20:54:06,701 - INFO - Database connection closed
+2026-05-10 20:54:49,417 - INFO - Request received: GET /offices/count
+2026-05-10 20:54:49,418 - INFO - Query execution start: Counting rows in offices
+2026-05-10 20:54:49,420 - ERROR - Database error while querying offices: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 20:54:49,420 - INFO - Request successful: GET /offices/count
+2026-05-10 20:54:49,420 - INFO - Database connection closed
+2026-05-10 20:54:52,802 - INFO - Request received: GET /offices/count
+2026-05-10 20:54:52,802 - INFO - Query execution start: Counting rows in offices
+2026-05-10 20:54:52,803 - ERROR - Database error while querying offices: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 20:54:52,803 - INFO - Request successful: GET /offices/count
+2026-05-10 20:54:52,804 - INFO - Database connection closed
+2026-05-10 20:55:23,988 - INFO - Request received: GET /offices/count
+2026-05-10 20:55:23,988 - INFO - Query execution start: Counting rows in offices
+2026-05-10 20:55:23,989 - ERROR - Database error while querying offices: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 20:55:23,989 - INFO - Request successful: GET /offices/count
+2026-05-10 20:55:23,990 - INFO - Database connection closed
+2026-05-10 20:55:55,451 - INFO - Database connection configured
+2026-05-10 20:57:26,358 - INFO - Database connection configured
+2026-05-10 20:57:28,664 - INFO - Database connection configured
+2026-05-10 20:57:35,842 - INFO - Request received: GET /offices/count
+2026-05-10 20:57:35,843 - INFO - Query execution start: Counting rows in offices
+2026-05-10 20:57:35,856 - ERROR - Database error while querying offices: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 20:57:35,856 - INFO - Request successful: GET /offices/count
+2026-05-10 20:57:35,857 - INFO - Database connection closed
+2026-05-10 20:59:07,834 - INFO - Database connection configured
+2026-05-10 20:59:09,632 - INFO - Database connection configured
+2026-05-10 20:59:39,128 - INFO - Database connection configured
+2026-05-10 20:59:41,126 - INFO - Database connection configured
+2026-05-10 20:59:52,237 - INFO - Request received: GET /offices/count
+2026-05-10 20:59:52,238 - INFO - Query execution start: Counting rows in offices
+2026-05-10 20:59:52,255 - ERROR - Database error while querying offices: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 20:59:52,255 - INFO - Request successful: GET /offices/count
+2026-05-10 20:59:52,256 - INFO - Database connection closed
+2026-05-10 21:00:23,620 - INFO - Request received: GET /orders/count
+2026-05-10 21:00:23,620 - INFO - Query execution start: Counting rows in orders
+2026-05-10 21:00:23,622 - ERROR - Database error while querying orders: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 21:00:23,622 - INFO - Request successful: GET /orders/count
+2026-05-10 21:00:23,623 - INFO - Database connection closed
+2026-05-10 21:01:00,394 - INFO - Database connection configured
+2026-05-10 21:01:02,182 - INFO - Database connection configured
+2026-05-10 21:01:12,854 - INFO - Request received: GET /offices/count
+2026-05-10 21:01:12,854 - INFO - Query execution start: Counting rows in offices
+2026-05-10 21:01:12,865 - ERROR - Database error while querying offices: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 21:01:12,865 - INFO - Request successful: GET /offices/count
+2026-05-10 21:01:12,866 - INFO - Database connection closed
+2026-05-10 21:02:37,510 - INFO - Database connection configured
+2026-05-10 21:02:57,863 - INFO - Database connection configured
+2026-05-10 21:03:20,725 - INFO - Database connection configured
+2026-05-10 21:03:24,968 - INFO - Request received: GET /offices/count
+2026-05-10 21:03:24,968 - INFO - Starting count query for table: offices
+2026-05-10 21:03:24,973 - ERROR - Database error while querying offices: 'ChunkedIteratorResult' object can't be awaited
+2026-05-10 21:03:24,973 - INFO - Request successful: GET /offices/count
+2026-05-10 21:03:24,974 - INFO - Database connection closed
+2026-05-10 21:10:50,453 - INFO - Counting rows in offices
+2026-05-10 21:10:50,457 - INFO - offices count = 1
+2026-05-10 21:11:00,591 - INFO - Counting rows in offices
+2026-05-10 21:11:00,593 - INFO - offices count = 1
+2026-05-10 21:42:56,230 - INFO - Counting rows in offices
+2026-05-10 21:42:56,275 - INFO - offices count = 1
+2026-05-10 21:43:03,312 - INFO - Counting rows in payments
+2026-05-10 21:43:03,316 - INFO - payments count = 0
+2026-05-10 21:43:09,861 - INFO - Counting rows in customers
+2026-05-10 21:43:09,862 - INFO - Counting rows in orders
+2026-05-10 21:43:09,863 - INFO - Counting rows in products
+2026-05-10 21:43:09,863 - INFO - Counting rows in employees
+2026-05-10 21:43:09,863 - INFO - Counting rows in offices
+2026-05-10 21:43:09,864 - INFO - Counting rows in payments
+2026-05-10 21:43:09,864 - INFO - Counting rows in orderdetails
+2026-05-10 21:43:09,864 - INFO - Counting rows in productlines
+2026-05-10 21:43:09,865 - INFO - customers count = 0
+2026-05-10 21:43:09,866 - INFO - orders count = 0
+2026-05-10 21:43:09,867 - INFO - products count = 0
+2026-05-10 21:43:09,867 - INFO - employees count = 0
+2026-05-10 21:43:09,868 - INFO - offices count = 1
+2026-05-10 21:43:09,868 - INFO - payments count = 0
+2026-05-10 21:43:09,869 - INFO - orderdetails count = 0
+2026-05-10 21:43:09,870 - INFO - productlines count = 0
+2026-05-10 21:48:40,665 - INFO - Counting rows in customers
+2026-05-10 21:48:40,670 - INFO - Counting rows in orders
+2026-05-10 21:48:40,671 - ERROR - Database error while querying orders: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:48:40,671 - INFO - Counting rows in products
+2026-05-10 21:48:40,671 - ERROR - Database error while querying products: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:48:40,671 - INFO - Counting rows in employees
+2026-05-10 21:48:40,671 - ERROR - Database error while querying employees: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:48:40,671 - INFO - Counting rows in offices
+2026-05-10 21:48:40,671 - ERROR - Database error while querying offices: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:48:40,671 - INFO - Counting rows in payments
+2026-05-10 21:48:40,672 - ERROR - Database error while querying payments: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:48:40,672 - INFO - Counting rows in orderdetails
+2026-05-10 21:48:40,672 - ERROR - Database error while querying orderdetails: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:48:40,672 - INFO - Counting rows in productlines
+2026-05-10 21:48:40,672 - ERROR - Database error while querying productlines: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:48:40,706 - INFO - customers count = 0
+2026-05-10 21:48:46,519 - INFO - Counting rows in customers
+2026-05-10 21:48:46,522 - INFO - Counting rows in orders
+2026-05-10 21:48:46,523 - INFO - Counting rows in products
+2026-05-10 21:48:46,523 - INFO - Counting rows in employees
+2026-05-10 21:48:46,524 - INFO - Counting rows in offices
+2026-05-10 21:48:46,524 - INFO - Counting rows in payments
+2026-05-10 21:48:46,524 - INFO - Counting rows in orderdetails
+2026-05-10 21:48:46,525 - INFO - Counting rows in productlines
+2026-05-10 21:48:46,526 - INFO - customers count = 0
+2026-05-10 21:48:46,528 - INFO - orders count = 0
+2026-05-10 21:48:46,529 - INFO - products count = 1
+2026-05-10 21:48:46,530 - INFO - employees count = 0
+2026-05-10 21:48:46,530 - INFO - offices count = 1
+2026-05-10 21:48:46,531 - INFO - payments count = 0
+2026-05-10 21:48:46,532 - INFO - orderdetails count = 0
+2026-05-10 21:48:46,533 - INFO - productlines count = 1
+2026-05-10 21:55:09,173 - INFO - Counting rows in customers
+2026-05-10 21:55:09,181 - INFO - Counting rows in orders
+2026-05-10 21:55:09,182 - ERROR - Database error while querying orders: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:55:09,182 - INFO - Counting rows in products
+2026-05-10 21:55:09,182 - ERROR - Database error while querying products: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:55:09,182 - INFO - Counting rows in employees
+2026-05-10 21:55:09,182 - ERROR - Database error while querying employees: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:55:09,182 - INFO - Counting rows in offices
+2026-05-10 21:55:09,182 - ERROR - Database error while querying offices: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:55:09,182 - INFO - Counting rows in payments
+2026-05-10 21:55:09,182 - ERROR - Database error while querying payments: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:55:09,183 - INFO - Counting rows in orderdetails
+2026-05-10 21:55:09,183 - ERROR - Database error while querying orderdetails: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:55:09,183 - INFO - Counting rows in productlines
+2026-05-10 21:55:09,183 - ERROR - Database error while querying productlines: This session is provisioning a new connection; concurrent operations are not permitted (Background on this error at: https://sqlalche.me/e/20/isce)
+2026-05-10 21:55:09,224 - INFO - customers count = 0
+2026-05-10 21:55:16,146 - INFO - Counting rows in customers
+2026-05-10 21:55:16,147 - INFO - Counting rows in orders
+2026-05-10 21:55:16,148 - INFO - Counting rows in products
+2026-05-10 21:55:16,149 - INFO - Counting rows in employees
+2026-05-10 21:55:16,149 - INFO - Counting rows in offices
+2026-05-10 21:55:16,149 - INFO - Counting rows in payments
+2026-05-10 21:55:16,150 - INFO - Counting rows in orderdetails
+2026-05-10 21:55:16,150 - INFO - Counting rows in productlines
+2026-05-10 21:55:16,151 - INFO - customers count = 0
+2026-05-10 21:55:16,152 - INFO - orders count = 0
+2026-05-10 21:55:16,153 - INFO - products count = 1
+2026-05-10 21:55:16,154 - INFO - employees count = 0
+2026-05-10 21:55:16,155 - INFO - offices count = 1
+2026-05-10 21:55:16,156 - INFO - payments count = 0
+2026-05-10 21:55:16,157 - INFO - orderdetails count = 0
+2026-05-10 21:55:16,157 - INFO - productlines count = 1

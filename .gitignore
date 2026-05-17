@@ -1,4 +1,5 @@
-assignments
 package-lock.json
 node_modules
 .env
+.pyc
+hidden_folder
