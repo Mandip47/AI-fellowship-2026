@@ -1,0 +1,230 @@
+[
+  {
+    "question": "How many customers are from the USA?",
+    "intent": "Count total customers from a specific country",
+    "tables": [
+      "customers"
+    ],
+    "columns": {
+      "customers": [
+        "customerNumber"
+      ]
+    },
+    "filters": [
+      "country = 'USA'"
+    ],
+    "joins": [],
+    "aggregations": [
+      "COUNT(customerNumber)"
+    ],
+    "notes": "Simple single-table count with a WHERE filter on country."
+  },
+  {
+    "question": "List all orders that have been shipped but not yet delivered.",
+    "intent": "Retrieve orders based on shipping and delivery status",
+    "tables": [
+      "orders"
+    ],
+    "columns": {
+      "orders": [
+        "orderNumber",
+        "orderDate",
+        "requiredDate",
+        "shippedDate",
+        "status",
+        "customerNumber"
+      ]
+    },
+    "filters": [
+      "status = 'Shipped'",
+      "shippedDate IS NOT NULL"
+    ],
+    "joins": [],
+    "aggregations": [],
+    "notes": "The request implies that 'Shipped' status means it has left the warehouse but 'delivered' is a separate state not explicitly tracked in the 'orders' table. Assuming 'Shipped' status and a non-null 'shippedDate' is sufficient to identify orders that have been shipped but not necessarily delivered. If 'delivered' was a distinct status, it would be included in the filter."
+  },
+  {
+    "question": "Which products have a quantity in stock less than 100?",
+    "intent": "Find products with low stock quantity",
+    "tables": [
+      "products"
+    ],
+    "columns": {
+      "products": [
+        "productName",
+        "quantityInStock"
+      ]
+    },
+    "filters": [
+      "quantityInStock < 100"
+    ],
+    "joins": [],
+    "aggregations": [],
+    "notes": "This query retrieves product names and their stock quantities for products where the stock is below a certain threshold."
+  },
+  {
+    "question": "Find the total amount paid by each customer.",
+    "intent": "Calculate the total payment amount for each customer.",
+    "tables": [
+      "payments",
+      "customers"
+    ],
+    "columns": {
+      "customers": [
+        "customerName"
+      ],
+      "payments": [
+        "amount"
+      ]
+    },
+    "filters": [],
+    "joins": [
+      "customers ON payments.customerNumber = customers.customerNumber"
+    ],
+    "aggregations": [
+      "SUM(amount)"
+    ],
+    "notes": "This query requires joining the 'payments' and 'customers' tables to link payment amounts to customer names. The total amount is aggregated per customer."
+  },
+  {
+    "question": "Who are the top 5 customers by total order value?",
+    "intent": "Identify top customers based on their total order value",
+    "tables": [
+      "customers",
+      "orders",
+      "orderdetails"
+    ],
+    "columns": {
+      "customers": [
+        "customerName",
+        "customerNumber"
+      ],
+      "orderdetails": [
+        "quantityOrdered",
+        "priceEach"
+      ]
+    },
+    "filters": [],
+    "joins": [
+      "customers ON customers.customerNumber = orders.customerNumber",
+      "orders ON orders.orderNumber = orderdetails.orderNumber"
+    ],
+    "aggregations": [
+      "SUM(orderdetails.quantityOrdered * orderdetails.priceEach)"
+    ],
+    "notes": "Calculate the total value for each order by multiplying quantityOrdered and priceEach from orderdetails. Then, group by customer and sum these values to get the total order value per customer. Finally, order customers by this total value in descending order and limit to the top 5."
+  },
+  {
+    "question": "Which employees report to the employee with employeeNumber 1143?",
+    "intent": "Find employees who report to a specific manager",
+    "tables": [
+      "employees"
+    ],
+    "columns": {
+      "employees": [
+        "employeeNumber",
+        "firstName",
+        "lastName"
+      ]
+    },
+    "filters": [
+      "reportsTo = 1143"
+    ],
+    "joins": [],
+    "aggregations": [],
+    "notes": "This query involves a self-join on the employees table where the 'reportsTo' column of one record matches the 'employeeNumber' of another. However, since we are only asked for the employees who report to a specific manager (identified by their employeeNumber), we can achieve this by filtering the 'reportsTo' column directly."
+  },
+  {
+    "question": "What is the average credit limit of customers in France?",
+    "intent": "Calculate the average credit limit for customers in a specific country",
+    "tables": [
+      "customers"
+    ],
+    "columns": {
+      "customers": [
+        "creditLimit"
+      ]
+    },
+    "filters": [
+      "country = 'France'"
+    ],
+    "joins": [],
+    "aggregations": [
+      "AVG(creditLimit)"
+    ],
+    "notes": "This query involves a single table 'customers' and requires filtering by country to calculate the average credit limit."
+  },
+  {
+    "question": "List all products in the 'Classic Cars' product line along with their MSRP.",
+    "intent": "Retrieve product information and their MSRP for a specific product line",
+    "tables": [
+      "products",
+      "productlines"
+    ],
+    "columns": {
+      "products": [
+        "productName",
+        "MSRP"
+      ],
+      "productlines": [
+        "productLine"
+      ]
+    },
+    "filters": [
+      "productlines.productLine = 'Classic Cars'"
+    ],
+    "joins": [
+      "productlines ON products.productLine = productlines.productLine"
+    ],
+    "aggregations": [],
+    "notes": "Join products and productlines tables to filter by productLine and select productName and MSRP."
+  },
+  {
+    "question": "How many orders were placed in each month of 2004?",
+    "intent": "Count orders per month for a specific year",
+    "tables": [
+      "orders"
+    ],
+    "columns": {
+      "orders": [
+        "orderNumber",
+        "orderDate"
+      ]
+    },
+    "filters": [
+      "YEAR(orderDate) = 2004"
+    ],
+    "joins": [],
+    "aggregations": [
+      "COUNT(orderNumber)",
+      "MONTH(orderDate)"
+    ],
+    "notes": "The query needs to extract the month from the orderDate and count the orders for each month. A filter is applied to consider only orders from the year 2004."
+  },
+  {
+    "question": "Which office has the most employees?",
+    "intent": "Find the office with the highest number of employees",
+    "tables": [
+      "offices",
+      "employees"
+    ],
+    "columns": {
+      "offices": [
+        "officeCode",
+        "city"
+      ],
+      "employees": [
+        "employeeNumber",
+        "officeCode"
+      ]
+    },
+    "filters": [],
+    "joins": [
+      "employees ON offices.officeCode = employees.officeCode"
+    ],
+    "aggregations": [
+      "COUNT(employees.employeeNumber)"
+    ],
+    "notes": "This query requires joining the offices and employees tables to count employees per office. The result should be ordered by the employee count in descending order, and limited to one to get the office with the most employees."
+  }
+]

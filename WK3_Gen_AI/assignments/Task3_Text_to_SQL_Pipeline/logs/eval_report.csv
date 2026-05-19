@@ -1,0 +1,73 @@
+question,expected_sql,generated_sql,fixed_sql,executed_successfully,retry_attempted,retry_success,final_status,row_count,latency_ms,error
+List all products,SELECT * FROM products;,"SELECT * FROM ""products"";",,True,False,False,success,110,8200.43,
+Get all customers,SELECT * FROM customers;,"SELECT * FROM ""customers"";",,True,False,False,success,122,5613.17,
+Show all orders,SELECT * FROM orders;,SELECT * FROM orders;,,True,False,False,success,326,3801.17,
+List all employees,SELECT * FROM employees;,"SELECT e.""employeeNumber"", e.""lastName"", e.""firstName"", e.""extension"", e.""email"", e.""officeCode"", e.""reportsTo"", e.""jobTitle"" FROM employees e;",,True,False,False,success,23,9942.96,
+Get all offices,SELECT * FROM offices;,SELECT * FROM offices;,,True,False,False,success,7,4700.58,
+Show all product lines,SELECT * FROM productlines;,"SELECT * FROM ""productlines"";",,True,False,False,success,7,7488.24,
+List all payments,SELECT * FROM payments;,"SELECT p.""customerNumber"", p.""checkNumber"", p.""paymentDate"", p.""amount"" FROM ""payments"" AS p;",,True,False,False,success,273,10255.56,
+Get product names and prices,"SELECT productName, buyPrice FROM products;","SELECT p.""productName"", p.""MSRP"" FROM products p;",,True,False,False,success,110,4014.69,
+Get customer names and cities,"SELECT customerName, city FROM customers;","SELECT c.""customerName"", c.""city"" FROM customers c;",,True,False,False,success,122,3610.42,
+List employee first and last names,"SELECT firstName, lastName FROM employees;","SELECT e.""firstName"", e.""lastName"" FROM ""employees"" e;",,True,False,False,success,23,5665.38,
+Get all order dates,SELECT orderDate FROM orders;,"SELECT o.""orderDate"" FROM orders o;",,True,False,False,success,326,5492.64,
+Show product vendor list,SELECT productVendor FROM products;,"SELECT DISTINCT p.""productVendor"" FROM products p;",,True,False,False,success,13,6222.35,
+Get all product codes,SELECT productCode FROM products;,"SELECT p.""productCode"" FROM products p;",,True,False,False,success,110,4197.4,
+List all countries from offices,SELECT country FROM offices;,"SELECT o.""country"" FROM ""offices"" o;",,True,False,False,success,7,5309.81,
+Show all order statuses,SELECT status FROM orders;,SELECT DISTINCT o.status FROM orders o;,,True,False,False,success,6,4121.7,
+Get all payment amounts,SELECT amount FROM payments;,SELECT amount FROM payments;,,True,False,False,success,273,5586.87,
+List all job titles,SELECT jobTitle FROM employees;,"SELECT DISTINCT e.""jobTitle"" FROM ""employees"" e;",,True,False,False,success,7,4309.29,
+Get customer phone numbers,SELECT phone FROM customers;,"SELECT c.phone FROM ""customers"" c;",,True,False,False,success,122,3727.93,
+Show product MSRP values,SELECT MSRP FROM products;,"SELECT p.""MSRP"" FROM products p;",,True,False,False,success,110,3285.35,
+List order numbers,SELECT orderNumber FROM orders;,"SELECT o.""orderNumber"" FROM orders o;",,True,False,False,success,326,3442.22,
+Get orders with customer names,"SELECT o.orderNumber, c.customerName FROM orders o JOIN customers c ON o.customerNumber = c.customerNumber;","SELECT o.*, c.""customerName"" FROM orders o JOIN customers c ON o.customerNumber = c.customerNumber;","SELECT o.*, c.""customerName"" FROM orders o JOIN customers c ON o.customerNumber = c.customerNumber;",False,True,False,failed,0,6685.85,"column o.customernumber does not exist
+LINE 1: ....""customerName"" FROM orders o JOIN customers c ON o.customer...
+                                                             ^
+HINT:  Perhaps you meant to reference the column ""o.customerNumber""."
+Get employees with office city,"SELECT e.firstName, e.lastName, o.city FROM employees e JOIN offices o ON e.officeCode = o.officeCode;","SELECT e.*, o.""city"" FROM employees e JOIN offices o ON e.""officeCode"" = o.""officeCode"";",,True,False,False,success,23,6095.06,
+Get payments with customer names,"SELECT p.checkNumber, c.customerName, p.amount FROM payments p JOIN customers c ON p.customerNumber = c.customerNumber;","SELECT p.*, c.""customerName"" FROM payments p JOIN customers c ON p.""customerNumber"" = c.""customerNumber"";",,True,False,False,success,273,4476.21,
+Get order details with product names,"SELECT od.orderNumber, p.productName FROM orderdetails od JOIN products p ON od.productCode = p.productCode;","SELECT od.*, p.""productName"" FROM ""orderdetails"" od JOIN products p ON od.""productCode"" = p.""productCode"";",,True,False,False,success,2996,4041.88,
+Get products with product line description,"SELECT p.productName, pl.textDescription FROM products p JOIN productlines pl ON p.productLine = pl.productLine;","SELECT
+  p.*,
+  pl.""textDescription""
+FROM
+  products AS p
+JOIN
+  productlines AS pl
+ON
+  p.""productLine"" = pl.""productLine"";",,True,False,False,success,110,4333.18,
+Get customers with sales rep names,"SELECT c.customerName, e.firstName, e.lastName FROM customers c JOIN employees e ON c.salesRepEmployeeNumber = e.employeeNumber;","SELECT c.""customerName"", e.""firstName"", e.""lastName""
+FROM customers c
+JOIN employees e ON c.""salesRepEmployeeNumber"" = e.""employeeNumber"";",,True,False,False,success,100,4772.99,
+Get orders with customer city,"SELECT o.orderNumber, c.city FROM orders o JOIN customers c ON o.customerNumber = c.customerNumber;","SELECT o.*, c.city FROM orders o JOIN customers c ON o.""customerNumber"" = c.""customerNumber"";",,True,False,False,success,326,5416.35,
+Get employees and their manager,"SELECT e.firstName AS employee_name, m.firstName AS manager_name FROM employees e JOIN employees m ON e.reportsTo = m.employeeNumber;","SELECT e1.""firstName"" AS employee_first_name, e1.""lastName"" AS employee_last_name, e2.""firstName"" AS manager_first_name, e2.""lastName"" AS manager_last_name FROM employees e1 JOIN employees e2 ON e1.""reportsTo"" = e2.""employeeNumber"";",,True,False,False,success,22,4271.47,
+Get orderdetails with product vendor,"SELECT od.orderNumber, p.productVendor FROM orderdetails od JOIN products p ON od.productCode = p.productCode;","SELECT od.*, p.""productVendor"" FROM orderdetails od JOIN products p ON p.""productCode"" = od.""productCode"";",,True,False,False,success,2996,5124.63,
+Get payments with customer country,"SELECT p.amount, c.country FROM payments p JOIN customers c ON p.customerNumber = c.customerNumber;","SELECT p.*, c.""country"" FROM payments p JOIN customers c ON p.""customerNumber"" = c.""customerNumber"";",,True,False,False,success,273,3886.18,
+Count customers per country,"SELECT country, COUNT(*) AS total_customers FROM customers GROUP BY country;","SELECT c.""country"", COUNT(c.""customerNumber"") AS customer_count FROM customers c GROUP BY c.""country"";",,True,False,False,success,28,4366.9,
+Total payments per customer,"SELECT customerNumber, SUM(amount) AS total_payments FROM payments GROUP BY customerNumber;","SELECT c.""customerName"", SUM(p.""amount"") AS total_payments
+FROM customers c
+JOIN payments p ON c.""customerNumber"" = p.""customerNumber""
+GROUP BY c.""customerName"";",,True,False,False,success,98,8232.56,
+Number of orders per status,"SELECT status, COUNT(*) AS total_orders FROM orders GROUP BY status;","SELECT o.status, COUNT(o.""orderNumber"") AS order_count FROM orders o GROUP BY o.status;",,True,False,False,success,6,5063.95,
+Products per product line,"SELECT productLine, COUNT(*) AS total_products FROM products GROUP BY productLine;","SELECT pl.""productLine"", COUNT(p.""productCode"") AS product_count FROM productlines pl JOIN products p ON pl.""productLine"" = p.""productLine"" GROUP BY pl.""productLine"";",,True,False,False,success,7,5912.76,
+Employees per office,"SELECT officeCode, COUNT(*) AS total_employees FROM employees GROUP BY officeCode;","SELECT o.""city"", COUNT(e.""employeeNumber"") AS employee_count FROM employees e JOIN offices o ON e.""officeCode"" = o.""officeCode"" GROUP BY o.""city"";",,True,False,False,success,7,4537.3,
+Total stock per product vendor,"SELECT productVendor, SUM(quantityInStock) AS total_stock FROM products GROUP BY productVendor;","SELECT p.""productVendor"", SUM(p.""quantityInStock"") AS total_stock FROM products p GROUP BY p.""productVendor"";",,True,False,False,success,13,5185.92,
+Average buy price per product line,"SELECT productLine, AVG(buyPrice) AS avg_buy_price FROM products GROUP BY productLine;","SELECT pl.""productLine"", AVG(p.""buyPrice"") AS average_buy_price FROM productlines pl JOIN products p ON pl.""productLine"" = p.""productLine"" GROUP BY pl.""productLine"";",,True,False,False,success,7,4700.01,
+Orders per customer,"SELECT customerNumber, COUNT(*) AS total_orders FROM orders GROUP BY customerNumber;","SELECT c.""customerName"", COUNT(o.""orderNumber"") AS total_orders FROM customers c JOIN orders o ON c.""customerNumber"" = o.""customerNumber"" GROUP BY c.""customerName"";",,True,False,False,success,98,5572.49,
+Max MSRP per product line,"SELECT productLine, MAX(MSRP) AS max_msrp FROM products GROUP BY productLine;","SELECT pl.""productLine"", MAX(p.""MSRP"") AS max_msrp
+FROM productlines pl
+JOIN products p ON p.productLine = pl.productLine
+GROUP BY pl.""productLine"";","SELECT pl.""productLine"", MAX(p.""MSRP"") AS max_msrp
+FROM productlines pl
+JOIN products p ON p.""productLine"" = pl.""productLine""
+GROUP BY pl.""productLine"";",True,True,True,success,7,6961.86,
+Min buy price per vendor,"SELECT productVendor, MIN(buyPrice) AS min_buy_price FROM products GROUP BY productVendor;","SELECT p.""productVendor"", MIN(p.""buyPrice"") AS min_buy_price FROM products p GROUP BY p.""productVendor"" ORDER BY min_buy_price ASC;",,True,False,False,success,13,5027.37,
+Total number of customers,SELECT COUNT(*) AS total_customers FROM customers;,"SELECT COUNT(c.""customerNumber"") FROM customers c;",,True,False,False,success,1,3788.25,
+Total number of products,SELECT COUNT(*) AS total_products FROM products;,"SELECT COUNT(p.""productCode"") AS total_products FROM products p;",,True,False,False,success,1,3872.09,
+Total revenue from payments,SELECT SUM(amount) AS total_revenue FROM payments;,SELECT SUM(p.amount) FROM payments p;,,True,False,False,success,1,4019.94,
+Average product price,SELECT AVG(buyPrice) AS avg_product_price FROM products;,"SELECT AVG(p.""buyPrice"") FROM products p;",,True,False,False,success,1,3521.43,
+Max payment amount,SELECT MAX(amount) AS max_payment FROM payments;,SELECT MAX(p.amount) FROM payments p;,,True,False,False,success,1,4255.35,
+Min payment amount,SELECT MIN(amount) AS min_payment FROM payments;,SELECT MIN(amount) AS min_payment_amount FROM payments;,,True,False,False,success,1,4050.81,
+Count total orders,SELECT COUNT(*) AS total_orders FROM orders;,"SELECT COUNT(o.""orderNumber"") AS total_orders FROM orders o;",,True,False,False,success,1,3687.92,
+Total quantity in stock,SELECT SUM(quantityInStock) AS total_quantity FROM products;,"SELECT SUM(p.""quantityInStock"") AS total_quantity_in_stock FROM products p;",,True,False,False,success,1,3630.18,
+Average MSRP,SELECT AVG(MSRP) AS avg_msrp FROM products;,"SELECT AVG(p.""MSRP"") FROM products p;",,True,False,False,success,1,4165.2,
+Number of employees,SELECT COUNT(*) AS total_employees FROM employees;,"SELECT COUNT(e.""employeeNumber"") FROM employees e;",,True,False,False,success,1,4090.31,

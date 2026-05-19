@@ -1,0 +1,10 @@
+"""prompts package — exposes SYSTEM_PROMPT, DECOMPOSE_PROMPT, GENERATE_PROMPT, FIX_PROMPT"""
+
+from prompts.templates import (
+    SYSTEM_PROMPT,
+    DECOMPOSE_PROMPT,
+    GENERATE_PROMPT,
+    FIX_PROMPT,
+)
+
+__all__ = ["SYSTEM_PROMPT", "DECOMPOSE_PROMPT", "GENERATE_PROMPT", "FIX_PROMPT"]
