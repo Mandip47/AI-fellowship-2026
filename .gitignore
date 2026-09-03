@@ -175,3 +175,6 @@ Task3_Text_to_SQL_Pipeline/logs/
 Task3_Text_to_SQL_Pipeline/db_init/seed_backup.sql
 Task4_Mini_SQL_Agent/logs/
 readings/__pycache__/
+/Open_CV
+/WK14
+*/data
